@@ -1,0 +1,147 @@
+  
+<div class="slider">
+  <div class="slide"><section class="featured">
+    <div class="featured-image">
+      <img src="assets/featured.jpg" alt="Featured News">
+    </div>
+    <div class="featured-content">
+      <h2>Editor's Pick</h2>
+      <h1>News Needs to Meet Its Audiences Where They Are</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Voluptate vero obcaecati natus adipisci necessitatibus eius...</p>
+      <p>By Dave Rogers in Food</p>
+      <p>Jun 14 · 3 min read</p>
+    </div>
+  </section>
+</div>
+  <div class="slide"><section class="featured">
+    <div class="featured-image">
+      <img src="assets/featured.jpg" alt="Featured News">
+    </div>
+    <div class="featured-content">
+      <h2>Editor's Pick</h2>
+      <h1>News Needs to Meet Its Audiences Where They Are</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Voluptate vero obcaecati natus adipisci necessitatibus eius...</p>
+      <p>By Dave Rogers in Food</p>
+      <p>Jun 14 · 3 min read</p>
+    </div>
+  </section>
+</div>
+  <div class="slide"><section class="featured">
+    <div class="featured-image">
+      <img src="assets/featured.jpg" alt="Featured News">
+    </div>
+    <div class="featured-content">
+      <h2>Editor's Pick</h2>
+      <h1>News Needs to Meet Its Audiences Where They Are</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Voluptate vero obcaecati natus adipisci necessitatibus eius...</p>
+      <p>By Dave Rogers in Food</p>
+      <p>Jun 14 · 3 min read</p>
+    </div>
+  </section>
+</div>
+</div>
+<button class="prev"><</button>
+<button class="next">></button>
+
+
+<!-- Editor's Pick and Trending -->
+<section class="main-content">
+  <div class="left-column">
+    <h2>Editor's Pick</h2>
+    <div class="editorsPick-item" *ngFor="let article of editorsPickArticles" >
+      <a target="_blank" href="{{article.url}}">   
+        <img [src]="article.urlToImage" alt="{{ article.title }}"  style= width:200px>
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.description }}</p>
+        <p>By {{ article.author }} · {{ article.publishedAt | date }}</p>
+      </a>
+      
+    </div>
+  </div>
+
+  <div class="right-column">
+    <h2>Trending</h2>
+    <div class="trending-item" *ngFor="let article of trendingArticles; let i = index">
+      <span>0{{i + 1 }}</span>
+      <a target="_blank" href="{{article.url}}">
+        
+        <h3>{{ article.title }}</h3>
+        <p>By {{ article.author }} · {{ article.publishedAt | date }}</p>
+      </a>
+    </div>
+    <a href="#" class="see-all">See all trends</a>
+  </div>
+</section>
+
+<!-- Categories Section -->
+<section class="categories">
+  <div class="politics">
+    <h2>Politics</h2>
+    <div class="politics-item" *ngFor="let article of politicsArticles">
+      <a target="_blank" href="{{article.url}}">  
+        <div class="politicsimg">
+        <img [src]="article.urlToImage" alt="{{ article.title }}" style= width:200px (error)="handleImageError($event)">
+      </div>
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.description }}</p>
+        <p>By {{ article.author }} · {{ article.publishedAt | date }}</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="business">
+    <h2>Business</h2>
+    <div class="business-item" *ngFor="let article of businessArticles">
+      <a target="_blank" href="{{article.url}}">   
+        <img [src]="article.urlToImage" alt="{{ article.title }}" style= width:200px (error)="handleImageError($event)">
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.description }}</p>
+        <p>By {{ article.author }} · {{ article.publishedAt | date }}</p>
+      </a>
+    </div>
+    <a href="#" class="see-all">See all trends</a>
+  </div>
+</section>
+
+<!-- Recent News and Popular Posts -->
+<section class="recent-popular">
+  <div class="recent-news">
+    <h2>Recent News</h2>
+    <div class="recentNews-item" *ngFor="let article of recentNews" >
+      <a target="_blank" href="{{article.url}}">   
+        <img [src]="article.urlToImage" alt="{{ article.title }}" style= width:200px>
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.description }}</p>
+        <p>By {{ article.author }} · {{ article.publishedAt | date }}</p>
+      </a>
+    
+    </div>
+  </div>
+
+  <div class="popular-posts">
+    <h2>Popular Posts</h2>
+    <div class="popular-item" *ngFor="let article of popularPosts; let i = index">
+      <span>0{{ i + 1 }}</span>
+        <a target="_blank" href="{{article.url}}">   
+           <img [src]="article.urlToImage" alt="{{ article.title }}" style= width:200px >
+           <h3>{{ article.title }}</h3>
+           <p>{{ article.description }}</p>
+           <p>By {{ article.author }} · {{ article.publishedAt | date }}</p>
+        </a>
+    </div>
+    <a href="#" class="see-all">See all popular</a>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="newsletter-content">
+    <h2>Newsletter Subscribe</h2>
+    <div class="newsletter-row">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Perferendis aspernatur ut at quae omnis pariatur obcaecati possimus nisi ea iste!</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+</section>

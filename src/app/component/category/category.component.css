@@ -1,0 +1,88 @@
+.categories {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.content {
+  width: 65%;
+}
+
+.category-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.news-item {
+  margin-bottom: 20px;
+}
+
+.news-item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.news-item p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.author-date {
+  font-size: 14px;
+  color: #999;
+}
+
+.sidebar {
+  width: 30%;
+}
+
+.sidebar h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.popular-posts {
+  list-style: none;
+  padding: 0;
+}
+
+.popular-posts li {
+  display: flex;
+  margin-bottom: 20px;
+
+}
+
+.popular-item span {
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 10px;
+  color: #cccc;
+  line-height: 1;
+  flex: 0 0 50px;
+}
+
+.rank {
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 15px;
+  color: #999;
+}
+
+.post-details h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.post-details p {
+  font-size: 14px;
+  color: #999;
+}
+
+.see-all {
+  display: inline-block;
+  margin-top: 20px;
+  color: #28a745;
+  text-decoration: none;
+}

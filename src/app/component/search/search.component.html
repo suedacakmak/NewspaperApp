@@ -1,0 +1,18 @@
+<div class="search-container">
+    <h1>Search News</h1>
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Enter search term">
+    <button (click)="onSearch()">Search</button>
+  </div>
+  
+  <div class="news-list" *ngIf="articles.length > 0">
+    <div *ngFor="let article of articles" class="news-item">
+      <img [src]="article.urlToImage" alt="{{ article.title }}">
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.description }}</p>
+    </div>
+  </div>
+  
+  <div *ngIf="articles.length === 0 && searchTerm">
+    <p>No results found for "{{ searchTerm }}".</p>
+  </div>
+  

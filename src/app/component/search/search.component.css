@@ -1,0 +1,32 @@
+.search-container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .news-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .news-item {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 300px;
+  }
+  
+  .news-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .news-item h3 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .news-item p {
+    font-size: 14px;
+  }
+  

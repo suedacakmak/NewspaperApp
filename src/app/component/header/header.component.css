@@ -1,0 +1,90 @@
+.header {
+  background-color: #fff;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 36px;
+  font-family: 'Georgia', serif;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu ul li {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.nav-menu ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-menu ul li a:hover {
+  color: #333;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+.social-icons a {
+  color: #000; 
+  margin-right: 15px;
+  font-size: 16px; 
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #333; 
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 5px 10px;
+  border-radius: 30px;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 5px;
+  font-size: 16px;
+  color: #666;
+}
+
+.search-box button {
+  border: none;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
