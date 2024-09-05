@@ -1,3 +1,18 @@
+a {
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  align-items: center;
+}
+
+h3 {
+  padding: 15px;
+}
+
+img {
+  padding: 5px;
+}
+
 .categories {
   display: flex;
   justify-content: space-between;
@@ -51,7 +66,6 @@
 .popular-posts li {
   display: flex;
   margin-bottom: 20px;
-
 }
 
 .popular-item span {

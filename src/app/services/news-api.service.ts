@@ -21,5 +21,6 @@ export class NewsApiService {
 
   searchNews(query: string, country: string = 'tr'): Observable<any> {
     return this.http.get(`${this.baseUrl}?country=${country}&q=${query}&apiKey=${this.apiKey}`);
+    
   }
 }

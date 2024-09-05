@@ -27,4 +27,7 @@ export class CategoryComponent implements OnInit {
     });
 
   }
+  handleImageError(event: any): void {
+    event.target.src = '/assets/default.jpg'; // Varsayılan görselin yolunu buraya yazın
+  }
 }

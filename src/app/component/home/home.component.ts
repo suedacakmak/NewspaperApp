@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   businessArticles: any[] = [];
   recentNews: any[] = [];
   popularPosts: any[] = [];
+  sliderArticles: any[] = [];
   currentIndex: number = 0;
   slides: HTMLElement[] = [];
 
@@ -32,35 +33,56 @@ export class HomeComponent implements OnInit {
 
     this.newsApiService.getCategoryNews('business').subscribe((data: any) => {
       this.businessArticles = data.articles.slice(0, 3);
-    });
+    });  
 
     this.newsApiService.getTopHeadlines().subscribe((data: any) => {
+      this.recentNews = data.articles.slice(6, 9);
+      this.popularPosts = data.articles.slice(9, 12);
+    });  
+
+    this.newsApiService.getTopHeadlines().subscribe((data: any) => {
+      this.politicsArticles = data.articles.slice(12, 15);
+      
+    });  
+
+    this.newsApiService.getTopHeadlines().subscribe((data: any) => {
+      this.sliderArticles = data.articles.slice();
+      this.initializeSlider();
+    });
+
+    /*this.newsApiService.getCategoryNews('technology').subscribe((data: any) => {
       this.recentNews = data.articles.slice(0, 3);
-      this.popularPosts = data.articles.slice(3, 6);
     });
-
-    // Initialize the slider
-    const slider = document.querySelector('.slider') as HTMLElement;
-    this.slides = Array.from(document.querySelectorAll('.slide') as NodeListOf<HTMLElement>);
-
-    document.querySelector('.next')!.addEventListener('click', () => {
-      if (this.currentIndex < this.slides.length - 1) {
-        this.currentIndex++;
-      } else {
-        this.currentIndex = 0;
-      }
-      this.updateSlider(slider);
-    });
-
-    document.querySelector('.prev')!.addEventListener('click', () => {
-      if (this.currentIndex > 0) {
-        this.currentIndex--;
-      } else {
-        this.currentIndex = this.slides.length - 1;
-      }
-      this.updateSlider(slider);
-    });
+  
+    // Popular Posts
+    this.newsApiService.getCategoryNews('entertainment').subscribe((data: any) => {
+      this.popularPosts = data.articles.slice(0, 3);
+    }); */
   }
+   
+    // Initialize the slider
+    initializeSlider(): void {
+      const slider = document.querySelector('.slider') as HTMLElement;
+      this.slides = Array.from(document.querySelectorAll('.slide') as NodeListOf<HTMLElement>);
+  
+      document.querySelector('.next')!.addEventListener('click', () => {
+        if (this.currentIndex < this.slides.length - 1) {
+          this.currentIndex++;
+        } else {
+          this.currentIndex = 0;
+        }
+        this.updateSlider(slider);
+      });
+  
+      document.querySelector('.prev')!.addEventListener('click', () => {
+        if (this.currentIndex > 0) {
+          this.currentIndex--;
+        } else {
+          this.currentIndex = this.slides.length - 1;
+        }
+        this.updateSlider(slider);
+      });
+    }
 
   updateSlider(slider: HTMLElement) {
     slider.style.transform = `translateX(-${this.currentIndex * 100}%)`;
@@ -69,5 +91,4 @@ export class HomeComponent implements OnInit {
     event.target.src = '/assets/default.jpg'; // Varsayılan görselin yolunu buraya yazın
   }
 }
-
 
